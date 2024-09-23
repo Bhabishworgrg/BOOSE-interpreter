@@ -1,0 +1,15 @@
+﻿*example of a for statement which will violate restrictions, you will need to replace the For class.
+pen 255,0,0
+moveto 200,200
+for count = 1 to 20 step 2
+	circle count * 10
+end for
+pen 0,255,0
+moveto 150,150
+for count = 20 to 1 step -2
+	circle count * 10
+end for
+pen 0,0,255
+for count2 = 30 to 10 step -1
+	circle count2 * 20
+end for

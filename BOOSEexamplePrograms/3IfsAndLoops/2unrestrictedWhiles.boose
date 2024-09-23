@@ -1,0 +1,19 @@
+﻿*example of a while statement which will violate restrictions, you will need to replace the While class.
+moveto 100,100
+int width = 9
+int height = 150
+pen 255,128,128
+while height > 50
+	circle height
+	height = height - 15
+	if height < 100
+		pen 0,128,255
+	end if
+end while
+pen 0,255,0
+moveto 50,50
+height = 50
+while height > 10
+	rect height, height
+	height = height - 10
+end while

@@ -1,0 +1,11 @@
+﻿*use of variables that won't violate restrictions
+int radius = 50
+int width
+width = 2*radius
+int height = 100
+int colour = 255
+pen colour,0,0
+moveto 100, 100
+circle radius
+pen 0,colour,0
+rect width, height

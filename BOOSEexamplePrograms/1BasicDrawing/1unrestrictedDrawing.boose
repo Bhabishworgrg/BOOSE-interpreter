@@ -1,0 +1,13 @@
+﻿*to run this program you will need to replace several drawing methods and facilities.
+moveto 100,150
+pen 0,0,255
+circle 150
+pen 255,0,0
+moveto 150,50
+rect 150,100
+moveto 150,200
+pen 0,0,255
+circle 150
+pen 255,0,0
+moveto 150,50
+rect 150,100

@@ -1,0 +1,9 @@
+﻿method int testMethod int one, int two
+  testMethod = one * two
+end method
+int global = 55
+call testMethod 10 15
+moveto 200,200
+write testMethod
+circle testMethod
+rect global, global

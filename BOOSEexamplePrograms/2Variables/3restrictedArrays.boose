@@ -1,0 +1,10 @@
+﻿int x = 0
+real y
+array int nums 10
+poke nums 5 = 99
+peek x = nums 5
+circle x
+array real prices 10
+poke prices 5 = 99.99
+peek y = prices 5
+write "£"+y

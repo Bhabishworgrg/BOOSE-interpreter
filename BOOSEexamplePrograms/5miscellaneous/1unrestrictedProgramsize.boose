@@ -1,0 +1,13 @@
+﻿*too many lines, the squares will not be drawn without replacing StoredProgram and Parser.
+circle 100
+circle 50
+circle 100
+circle 50
+circle 100
+circle 50
+circle 100
+circle 50
+circle 100
+circle 50
+rect 100,100
+rect 200,200

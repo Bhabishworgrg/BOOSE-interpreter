@@ -1,0 +1,17 @@
+﻿*use of variables that will violate restrictions, need to run replace int class to get this to run
+int radius = 50
+int width
+width = 2*radius
+int height = 100
+int red = 255
+int green = 128
+pen red,0,0
+moveto 100, 100
+circle radius
+pen 0,green,0
+rect width, height
+pen red,0,0
+moveto 150, 150
+circle radius
+pen 0,green,0
+rect width, height

@@ -1,0 +1,11 @@
+﻿*demonstrate use of real values which violates restrictions. You will need to replace the Real class to get this working
+pen 0,0,255
+real length = 15.5
+real width = 10.0
+real pi = 3.14159
+real radius = 27.7
+real circ = 2 * pi * radius
+moveto 100,100
+write length * width
+moveto 100,125
+write circ

@@ -1,0 +1,12 @@
+﻿*example of an if statement which won't violate restrictions
+moveto 100,100
+int width = 9
+int height = 100
+pen 255,128,0
+while height > 50
+	circle height
+	height = height - 15
+end while
+pen 0,255,0
+moveto 25,25
+rect 100,100
