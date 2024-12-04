@@ -2,9 +2,9 @@
 # ASE Portfolio
 Fill in the fields below.
 
-## Your Name
+## Your Name Bhabishwor Gurung
 ### Your Group
-### Your Tutor
+### Your Tutor Resham Pun
 
 Keep your progress up to date below. Put "DONE" after each section, when you have done it.
 
