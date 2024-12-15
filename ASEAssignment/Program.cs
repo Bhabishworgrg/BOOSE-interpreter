@@ -11,9 +11,9 @@ namespace ASEAssignment
         [STAThread]
         static void Main()
         {
+            Debug.WriteLine(AboutBOOSE.about());
             ApplicationConfiguration.Initialize();
             Application.Run(new MainForm());
-            Debug.WriteLine(AboutBOOSE.about());
         }
     }
 }
