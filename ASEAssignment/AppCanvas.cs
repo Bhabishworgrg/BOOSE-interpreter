@@ -40,8 +40,8 @@ namespace ASEAssignment
 		{
 			xPos = yPos = 0;
 
-			displayWidth = 640;
-			displayHeight = 480;
+			displayWidth = 579;
+			displayHeight = 610;
 			
 			penColour = Color.Black;
 			solidBrush = new SolidBrush(penColour);

@@ -50,6 +50,7 @@
             btn_run.TabIndex = 1;
             btn_run.Text = "Run";
             btn_run.UseVisualStyleBackColor = true;
+            btn_run.Click += btn_run_Click;
             // 
             // picbox_output
             // 
@@ -59,6 +60,7 @@
             picbox_output.Size = new Size(579, 610);
             picbox_output.TabIndex = 2;
             picbox_output.TabStop = false;
+            picbox_output.Paint += picbox_output_Paint;
             // 
             // MainForm
             // 
