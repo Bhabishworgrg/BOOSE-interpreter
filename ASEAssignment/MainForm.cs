@@ -13,10 +13,10 @@ namespace ASEAssignment
         {
             InitializeComponent();
             canvas = new AppCanvas();
-            commandFactory = new CommandFactory();
+            commandFactory = new ExtendedCommandFactory();
             storedProgram = new StoredProgram(canvas);
             parser = new Parser(commandFactory, storedProgram);
-        }
+		}
 
         private void picbox_output_Paint(object sender, PaintEventArgs e)
         {

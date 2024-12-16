@@ -54,13 +54,9 @@ namespace ASEAssignment
 
         public void Circle(int radius, bool filled)
         {
-			if (filled)
+			if (!filled)
 			{
-				graphics.FillEllipse(solidBrush, xPos, yPos, radius, radius);
-			}
-			else
-			{
-				graphics.DrawEllipse(pen, xPos, yPos, radius, radius);
+				graphics.DrawEllipse(pen, xPos - radius, yPos - radius, radius * 2, radius * 2);
 			}
         }
 
@@ -89,11 +85,7 @@ namespace ASEAssignment
 
         public void Rect(int width, int height, bool filled)
         {
-			if (filled)
-			{
-				graphics.FillRectangle(solidBrush, xPos, yPos, width, height);
-			}
-			else
+			if (!filled)
 			{
 				graphics.DrawRectangle(pen, xPos, yPos, width, height);
 			}
