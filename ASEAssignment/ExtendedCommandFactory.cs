@@ -7,9 +7,12 @@ namespace ASEAssignment
         public override ICommand MakeCommand(string commandType)
         {
 			commandType = commandType.ToLower().Trim();
-			if (commandType == "write")
+			switch (commandType)
 			{
-				return new WriteText();
+				case "write":
+					return new WriteText();
+				case "tri":
+					return new Tri();
 			}
 
             return (base.MakeCommand(commandType));

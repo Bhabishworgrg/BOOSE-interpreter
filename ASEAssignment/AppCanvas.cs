@@ -115,7 +115,7 @@ namespace ASEAssignment
 			points[1] = new Point(xPos, yPos + height);
 			points[2] = new Point(xPos + width, yPos + height);
 
-			graphics.FillPolygon(solidBrush, points);
+			graphics.DrawPolygon(pen, points);
         }
 
         public void WriteText(string text)
