@@ -21,5 +21,13 @@ namespace ASEAssignment
 			height = Paramsint[1];
 			base.Canvas.Tri(width, height);
 		}
+
+		public override void CheckParameters(string[] parameterList)
+		{
+			if (parameterList.Length != 2)
+			{
+				throw new CommandException("Invalid number of parameters in " + ToString() + " :tri <width> <height>");
+			}
+		}
 	}
 }
