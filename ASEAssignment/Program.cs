@@ -3,6 +3,9 @@ using BOOSE;
 
 namespace ASEAssignment
 {
+	/// <summary>
+	/// The driver class for the application.
+	/// </summary>
     public static class Program
     {
         /// <summary>
