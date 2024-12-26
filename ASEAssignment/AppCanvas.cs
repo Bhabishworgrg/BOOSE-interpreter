@@ -82,6 +82,11 @@ namespace ASEAssignment
 		/// <seealso cref="BOOSE.ICanvas.Circle"/>
         public void Circle(int radius, bool filled)
         {
+			if (radius <= 0)
+			{
+				throw new CanvasException($"Invalid radius in Circle {radius} :circle <radius>");
+            }
+
 			if (!filled)
 			{
 				graphics.DrawEllipse(pen, xPos - radius, yPos - radius, radius * 2, radius * 2);
@@ -107,6 +112,11 @@ namespace ASEAssignment
 		/// <seealso cref="Ypos"/>
         public void DrawTo(int x, int y)
         {
+			if (x < 0 || y < 0 || x > displayWidth || y > displayHeight)
+			{
+				throw new CanvasException($"Invalid position in DrawTo {x},{y} :drawto <x>,<y>");
+			}
+
 			graphics.DrawLine(pen, xPos, yPos, x, y);
 			xPos = x;
 			yPos = y;
@@ -132,6 +142,11 @@ namespace ASEAssignment
 		/// <seealso cref="Ypos"/>
         public void MoveTo(int x, int y)
         {
+			if (x < 0 || y < 0 || x > displayWidth || y > displayHeight)
+			{
+				throw new CanvasException($"Invalid position in MoveTo {x},{y} :moveto <x>,<y>");
+			}
+
 			xPos = x;
 			yPos = y;
         }
@@ -146,6 +161,19 @@ namespace ASEAssignment
 		/// <seealso cref="BOOSE.ICanvas.Rect"/>
         public void Rect(int width, int height, bool filled)
         {
+			if (width <= 0 && height <= 0)
+			{
+				throw new CanvasException($"Invalid width and height in Rect {width},{height} :rect <width>,<height>");
+			}
+			else if (height <= 0)
+			{
+				throw new CanvasException($"Invalid height in Rect {width},{height} :rect <width>,<height>");
+			}
+			else if (width <= 0)
+			{
+				throw new CanvasException($"Invalid width in Rect {width},{height} :rect <width>,<height>");
+			}
+
 			if (!filled)
 			{
 				graphics.DrawRectangle(pen, xPos, yPos, width, height);
@@ -183,6 +211,11 @@ namespace ASEAssignment
 		/// <seealso cref="BOOSE.ICanvas.SetColour"/>
         public void SetColour(int red, int green, int blue)
         {
+			if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255)
+			{
+				throw new CanvasException($"Invalid colour in SetColour {red},{green},{blue} :setcolour <red>,<green>,<blue>");
+			}
+
 			PenColour = Color.FromArgb(red, green, blue);
         }
 
@@ -194,6 +227,19 @@ namespace ASEAssignment
 		/// <seealso cref="BOOSE.ICanvas.Tri"/>
         public void Tri(int width, int height)
         {
+			if (width <= 0 && height <= 0)
+			{
+				throw new CanvasException($"Invalid width and height in Tri {width},{height} :tri <width>,<height>");
+			}
+			else if (height <= 0)
+			{
+				throw new CanvasException($"Invalid height in Tri {width},{height} :tri <width>,<height>");
+			}
+			else if (width <= 0)
+			{
+				throw new CanvasException($"Invalid width in Tri {width},{height} :tri <width>,<height>");
+			}
+
 			Point[] points = new Point[3];
 			points[0] = new Point((xPos + width) / 2, yPos);
 			points[1] = new Point(xPos, yPos + height);

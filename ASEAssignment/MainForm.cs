@@ -38,17 +38,24 @@ namespace ASEAssignment
             graphics.DrawImageUnscaled(bm, 0, 0);
         }
 
-		/// <summary>
-		/// Runs the interpreter to display the output.
-		/// </summary>
-		/// <param name="sender">Source of the event i.e. <c>btn_run</c>.</param>
-		/// <param name="e">Arguments for the event.</param>
+        /// <summary>
+        /// Runs the interpreter to display the output.
+        /// </summary>
+        /// <param name="sender">Source of the event i.e. <c>btn_run</c>.</param>
+        /// <param name="e">Arguments for the event.</param>
         private void btn_run_Click(object sender, EventArgs e)
         {
-            String input = txtbox_input.Text;
-			parser.ParseProgram(input);
-			storedProgram.Run();
-			Refresh();
-		}
+            try
+            {
+                String input = txtbox_input.Text;
+                parser.ParseProgram(input);
+                storedProgram.Run();
+                Refresh();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
     }
 }

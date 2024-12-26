@@ -31,7 +31,7 @@ namespace ASEAssignment
 		/// <seealso cref="BOOSE.Command.Execute"/>
 		public override void Execute()
 		{
-			text = Parameters[0];
+			text = ParameterList;
 			base.Canvas.WriteText(text);
 		}
 
@@ -43,7 +43,7 @@ namespace ASEAssignment
 		/// <seealso cref="BOOSE.Command.CheckParameters"/>
         public override void CheckParameters(string[] parameterList)
         {
-			if (parameterList.Length != 1)
+			if (parameterList[0] == "")
 			{
 				throw new CommandException("Invalid number of parameters in " + ToString() + " :write <text>");
 			}

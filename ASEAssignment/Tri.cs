@@ -50,7 +50,7 @@ namespace ASEAssignment
 		{
 			if (parameterList.Length != 2)
 			{
-				throw new CommandException("Invalid number of parameters in " + ToString() + " :tri <width> <height>");
+				throw new CommandException("Invalid number of parameters in " + ToString() + " :tri <width>,<height>");
 			}
 		}
 	}
