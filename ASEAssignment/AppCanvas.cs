@@ -5,7 +5,10 @@ namespace ASEAssignment
 	/// <summary>
 	/// Class for drawing shapes and text.
 	/// </summary>
-	/// <seealso cref="BOOSE.ICanvas"/>
+	///
+	/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html">
+	/// BOOSE.ICanvas
+	/// </seealso>
     public class AppCanvas : ICanvas
     {
     	private int xPos, yPos;
@@ -16,12 +19,18 @@ namespace ASEAssignment
 		private Font font;
 		private Bitmap bitmap;
 		private Graphics graphics;
+		private const int DEFAULT_WIDTH = 579;
+		private const int DEFAULT_HEIGHT = 610;
 
 		/// <summary>
 		/// Get/Set the X position of the cursor.
 		/// </summary>
+		///
 		/// <value>X position of the cursor.</value>
-		/// <seealso cref="BOOSE.ICanvas.Xpos"/>
+		///
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Xpos">
+		/// BOOSE.ICanvas.Xpos
+		/// </seealso>
 		public int Xpos
 		{ 
 			get => xPos; 
@@ -31,8 +40,12 @@ namespace ASEAssignment
 		/// <summary>
 		/// Get/Set the Y position of the cursor.
 		/// </summary>
+		/// 
 		/// <value>Y position of the cursor.</value>
-		/// <seealso cref="BOOSE.ICanvas.Ypos"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Ypos">
+		/// BOOSE.ICanvas.Ypos
+		/// </seealso>
 		public int Ypos
 		{
 			get => yPos;
@@ -42,8 +55,12 @@ namespace ASEAssignment
 		/// <summary>
 		/// Get/Set the colour of the pen and brush.
         /// </summary>
+		///
 		/// <value>Colour of the pen and brush.</value>
-		/// <seealso cref="BOOSE.ICanvas.PenColour"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_PenColour">
+		/// BOOSE.ICanvas.PenColour
+		/// </seealso>
 		public object PenColour
 		{ 
 			get => penColour;
@@ -62,8 +79,8 @@ namespace ASEAssignment
 		{
 			xPos = yPos = 0;
 
-			displayWidth = 579;
-			displayHeight = 610;
+			displayWidth = DEFAULT_WIDTH;
+			displayHeight = DEFAULT_HEIGHT;
 			
 			penColour = Color.Black;
 			solidBrush = new SolidBrush(penColour);
@@ -77,9 +94,13 @@ namespace ASEAssignment
 		/// <summary>
 		/// Draws a circle of <paramref name="radius"/>.
 		/// </summary>
+		/// 
 		/// <param name="radius">Radius of the circle.</param>
 		/// <param name="filled">Whether the circle is filled or not.</param>
-		/// <seealso cref="BOOSE.ICanvas.Circle"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Circle_System_Int32_System_Boolean">
+		/// BOOSE.ICanvas.Circle
+		/// </seealso>
         public void Circle(int radius, bool filled)
         {
 			if (radius <= 0)
@@ -96,7 +117,10 @@ namespace ASEAssignment
 		/// <summary>
 		/// Clears the canvas.
 		/// </summary>
-		/// <seealso cref="BOOSE.ICanvas.Clear"/>
+		///
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Clear">
+		/// BOOSE.ICanvas.Clear
+		/// </seealso>
         public void Clear()
         {
 			graphics.Clear(Color.White);
@@ -105,11 +129,16 @@ namespace ASEAssignment
 		/// <summary>
 		/// Draws a line from (<see cref="Xpos"/>, <see cref="Ypos"/>) to (<paramref name="x"/>, <paramref name="y"/>).
 		/// </summary>
+		///
 		/// <param name="x">X position of the end of the line.</param>
 		/// <param name="y">Y position of the end of the line.</param>
-		/// <seealso cref="BOOSE.ICanvas.DrawTo"/>
+		/// 
 		/// <seealso cref="Xpos"/>
 		/// <seealso cref="Ypos"/>
+		///
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_DrawTo_System_Int32_System_Int32_">
+		/// BOOSE.ICanvas.DrawTo
+		/// </seealso>
         public void DrawTo(int x, int y)
         {
 			if (x < 0 || y < 0 || x > displayWidth || y > displayHeight)
@@ -125,8 +154,12 @@ namespace ASEAssignment
 		/// <summary>
 		/// Get the bitmap of the canvas.
 		/// </summary>
+		///
 		/// <returns>Bitmap of the canvas.</returns>
-		/// <seealso cref="BOOSE.ICanvas.getBitmap"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_getBitmap">
+		/// BOOSE.ICanvas.getBitmap
+		/// </seealso>
         public object getBitmap()
         {
 			return bitmap;
@@ -135,11 +168,16 @@ namespace ASEAssignment
 		/// <summary>
 		/// Moves the cursor from (<see cref="Xpos"/>, <see cref="Ypos"/>) to (<paramref name="x"/>, <paramref name="y"/>).
 		/// </summary>
+		///
 		/// <param name="x">X position to move the cursor to.</param>
 		/// <param name="y">Y position to move the cursor to.</param>
-		/// <seealso cref="BOOSE.ICanvas.MoveTo"/>
+		/// 
 		/// <seealso cref="Xpos"/>
 		/// <seealso cref="Ypos"/>
+		///
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_MoveTo_System_Int32_System_Int32_">
+		/// BOOSE.ICanvas.MoveTo
+		/// </seealso>
         public void MoveTo(int x, int y)
         {
 			if (x < 0 || y < 0 || x > displayWidth || y > displayHeight)
@@ -155,10 +193,14 @@ namespace ASEAssignment
 		/// <summary>
 		/// Draws a rectangle of <paramref name="width"/> and <paramref name="height"/>.
 		/// </summary>
+		/// 
 		/// <param name="width">Width of the rectangle.</param>
 		/// <param name="height">Height of the rectangle.</param>
 		/// <param name="filled">Whether the rectangle is filled or not.</param>
-		/// <seealso cref="BOOSE.ICanvas.Rect"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Rect_System_Int32_System_Int32_System_Boolean_">
+		/// BOOSE.ICanvas.Rect
+		/// </seealso>
         public void Rect(int width, int height, bool filled)
         {
 			if (width <= 0 && height <= 0)
@@ -183,7 +225,10 @@ namespace ASEAssignment
 		/// <summary>
 		/// Resets the position of the cursor and the colour of the pen and brush.
 		/// </summary>
-		/// <seealso cref="BOOSE.ICanvas.Reset"/>
+		///
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Reset">
+		/// BOOSE.ICanvas.Reset
+		/// </seealso>
         public void Reset()
         {
 			xPos = yPos = 0;
@@ -193,22 +238,30 @@ namespace ASEAssignment
 		/// <summary>
 		/// Sets the canvas size.
 		/// </summary>
+		///
 		/// <param name="width">Width of the canvas.</param>
 		/// <param name="height">Height of the canvas.</param>
-		/// <seealso cref="BOOSE.ICanvas.Set"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Set_System_Int32_System_Int32_">
+		/// BOOSE.ICanvas.Set
+		/// </seealso>
         public void Set(int width, int height)
         {
 			displayWidth = width;
 			displayHeight = height;
-        }
+		}
 
 		/// <summary>
 		/// Sets the colour of the pen and brush.
 		/// </summary>
+		///
 		/// <param name="red">Red value of the colour.</param>
 		/// <param name="green">Green value of the colour.</param>
 		/// <param name="blue">Blue value of the colour.</param>
-		/// <seealso cref="BOOSE.ICanvas.SetColour"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_SetColour_System_Int32_System_Int32_System_Int32_">
+		/// BOOSE.ICanvas.SetColour
+		/// </seealso>
         public void SetColour(int red, int green, int blue)
         {
 			if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255)
@@ -222,9 +275,13 @@ namespace ASEAssignment
 		/// <summary>
 		/// Draws a triangle of <paramref name="width"/> and <paramref name="height"/>.
 		/// </summary>
+		///
 		/// <param name="width">Width of the triangle.</param>
 		/// <param name="height">Height of the triangle.</param>
-		/// <seealso cref="BOOSE.ICanvas.Tri"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Tri_System_Int32_System_Int32_">
+		/// BOOSE.ICanvas.Tri
+		/// </seealso>
         public void Tri(int width, int height)
         {
 			if (width <= 0 && height <= 0)
@@ -251,8 +308,12 @@ namespace ASEAssignment
 		/// <summary>
 		/// Writes <paramref name="text"/> on the current position.
 		/// </summary>
+		///
 		/// <param name="text">Text to write on the canvas.</param>
-		/// <seealso cref="BOOSE.ICanvas.WriteText"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_WriteText_System_String_">
+		/// BOOSE.ICanvas.WriteText
+		/// </seealso>
         public void WriteText(string text)
         {
 			graphics.DrawString(text, font, solidBrush, xPos, yPos);

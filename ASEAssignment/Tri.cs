@@ -5,7 +5,10 @@ namespace ASEAssignment
 	/// <summary>
 	/// Command to draw a triangle on the canvas.
 	/// </summary>
-	/// <seealso cref="BOOSE.CommandTwoParameters"/>
+	/// 
+	/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CommandTwoParameters.html">
+	/// BOOSE.CommandTwoParameters
+	/// </seealso>
 	public class Tri : CommandTwoParameters
 	{
 		private int width, height;
@@ -18,6 +21,7 @@ namespace ASEAssignment
 		/// <summary>
 		/// Draw a triangle of <paramref name="width"/> and <paramref name="height"/> on the <paramref name="canvas"/>.
 		/// </summary>
+		///
 		/// <param name="canvas">Canvas to draw the triangle on.</param>
 		/// <param name="width">Width of the triangle.</param>
 		/// <param name="height">Height of the triangle.</param>
@@ -30,7 +34,10 @@ namespace ASEAssignment
 		/// <summary>
 		/// Executes the command.
 		/// </summary>
-		/// <seealso cref="BOOSE.Command.Execute"/>
+		/// 
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.Command.html#BOOSE_Command_Execute">
+		/// BOOSE.Command.Execute
+		/// </seealso>
 		public override void Execute()
 		{
 			base.Execute();
@@ -43,9 +50,16 @@ namespace ASEAssignment
 		/// <summary>
 		/// Ensures that only two parameters are passed.
 		/// </summary>
+		///
 		/// <param name="parameterList">List of parameters.</param>
-		/// <exception cref="CommandException">Thrown when the number of parameters is not equal to 2.</exception>
-		/// <seealso cref="BOOSE.Command.CheckParameters"/>
+		/// <exception cref="BOOSE.CommandException">Thrown when the number of parameters is not equal to 2.</exception>
+		///
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.Command.html#BOOSE_Command_CheckParameters_System_String___">
+		/// BOOSE.Command.CheckParameters
+		/// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CommandException.html">
+		/// BOOSE.CommandException
+		/// </seealso>
 		public override void CheckParameters(string[] parameterList)
 		{
 			if (parameterList.Length != 2)
