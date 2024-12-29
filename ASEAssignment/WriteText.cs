@@ -37,10 +37,19 @@ namespace ASEAssignment
 		/// BOOSE.Command.Execute
 		/// </seealso>
 		public override void Execute()
-		{
-			text = ParameterList;
-			base.Canvas.WriteText(text);
-		}
+        {
+            try
+            {
+                base.Execute();
+                 text = base.Program.EvaluateExpression(base.Parameters[0]);
+            }
+            catch (Exception ex)
+            {
+                text = ParameterList;
+            }
+
+            base.Canvas.WriteText(text);
+        }
 
 		/// <summary>
 		/// Ensures that only one parameter is passed.
