@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace ASEAssignment
+namespace MainProject
 {
 	/// <summary>
 	/// Main form of the interpreter.
@@ -13,6 +13,16 @@ namespace ASEAssignment
 		private CommandFactory commandFactory;
         private StoredProgram storedProgram;
         private Parser parser;
+
+        public int PicboxOutputWidth
+		{
+			set => picbox_output.Width = value;
+		}
+
+		public int PicboxOutputHeight
+		{
+			set => picbox_output.Height = value;
+		}
 
 		/// <summary>
 		/// Constructor for the main form.
@@ -36,8 +46,8 @@ namespace ASEAssignment
         private void picbox_output_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-			Bitmap bm = (Bitmap)canvas.getBitmap();
-            graphics.DrawImageUnscaled(bm, 0, 0);
+			Bitmap bitmap = (Bitmap) canvas.getBitmap();
+            graphics.DrawImageUnscaled(bitmap, 0, 0);
         }
 
         /// <summary>
@@ -50,15 +60,19 @@ namespace ASEAssignment
         {
             try
             {
-                String input = txtbox_input.Text;
-                parser.ParseProgram(input);
-                storedProgram.Run();
-                Refresh();
+                ExecuteCommand(txtbox_input.Text);
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
             }
+        }
+
+        public void ExecuteCommand(string input)
+        {
+            parser.ParseProgram(input);
+            storedProgram.Run();
+            Refresh();
         }
     }
 }

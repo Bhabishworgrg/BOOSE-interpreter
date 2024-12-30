@@ -1,4 +1,4 @@
-﻿namespace ASEAssignment
+﻿namespace MainProject
 {
     partial class MainForm
     {
