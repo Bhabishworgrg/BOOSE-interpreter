@@ -56,7 +56,7 @@ namespace MainProject
         /// </summary>
         /// 
         /// <param name="parameterList">List of parameters.</param>
-        /// <exception cref="CommandException">Thrown when the number of parameters is not equal to 1.</exception>
+        /// <exception cref="BOOSE.CommandException">Thrown when the number of parameters is not equal to 1.</exception>
         /// 
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.Command.html#BOOSE_Command_CheckParameters_System_String___">
         /// BOOSE.Command.CheckParameters

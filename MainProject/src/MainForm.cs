@@ -14,16 +14,6 @@ namespace MainProject
         private StoredProgram storedProgram;
         private Parser parser;
 
-        public int PicboxOutputWidth
-		{
-			set => picbox_output.Width = value;
-		}
-
-		public int PicboxOutputHeight
-		{
-			set => picbox_output.Height = value;
-		}
-
 		/// <summary>
 		/// Constructor for the main form.
 		/// </summary>
@@ -56,6 +46,7 @@ namespace MainProject
 		///
         /// <param name="sender">Source of the event i.e. <c>btn_run</c>.</param>
         /// <param name="e">Arguments for the event.</param>
+		/// <exception cref="Exception">Thrown when there is an error in the user input command.</exception>
         private void btn_run_Click(object sender, EventArgs e)
         {
             try
@@ -68,6 +59,11 @@ namespace MainProject
             }
         }
 
+		/// <summary>
+		/// Executes the input command to display the output.
+		/// </summary>
+		///
+		/// <param name="input">Input command to execute.</param>
         public void ExecuteCommand(string input)
         {
             parser.ParseProgram(input);

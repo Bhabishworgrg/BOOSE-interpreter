@@ -72,9 +72,21 @@ namespace MainProject
             }
         }
 
-		public int DisplayWidth => displayWidth;
+		/// <summary>
+		/// Get the width of the canvas.
+		/// </summary>
+		public int DisplayWidth 
+		{
+			get => displayWidth;
+		}
 
-		public int DisplayHeight => displayHeight;
+		/// <summary>
+		/// Get the height of the canvas.
+		/// </summary>
+		public int DisplayHeight
+		{
+			get => displayHeight;
+		}
 
         /// <summary>
         /// Constructor for AppCanvas.
@@ -101,10 +113,14 @@ namespace MainProject
         /// 
         /// <param name="radius">Radius of the circle.</param>
         /// <param name="filled">Whether the circle is filled or not.</param>
-        /// 
+		///	<exception cref="BOOSE.CanvasException">Thrown when the radius is less or equal to zero.</exception>
+		///
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Circle_System_Int32_System_Boolean">
         /// BOOSE.ICanvas.Circle
         /// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CanvasException.html">
+		/// BOOSE.CanvasException
+		/// </seealso>
         public void Circle(int radius, bool filled)
         {
             if (radius <= 0)
@@ -136,13 +152,17 @@ namespace MainProject
         ///
         /// <param name="x">X position of the end of the line.</param>
         /// <param name="y">Y position of the end of the line.</param>
-        /// 
+        /// <exception cref="BOOSE.CanvasException">Thrown when the position is out of bounds of the canvas display.</exception>
+		///
         /// <seealso cref="Xpos"/>
         /// <seealso cref="Ypos"/>
         ///
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_DrawTo_System_Int32_System_Int32_">
         /// BOOSE.ICanvas.DrawTo
         /// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CanvasException.html">
+		/// BOOSE.CanvasException
+		/// </seealso>
         public void DrawTo(int x, int y)
         {
             if (x < 0 || y < 0 || x > displayWidth || y > displayHeight)
@@ -175,13 +195,17 @@ namespace MainProject
         ///
         /// <param name="x">X position to move the cursor to.</param>
         /// <param name="y">Y position to move the cursor to.</param>
-        /// 
+        /// <exception cref="BOOSE.CanvasException">Thrown when the position is out of bounds of the canvas display.</exception>
+		///
         /// <seealso cref="Xpos"/>
         /// <seealso cref="Ypos"/>
         ///
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_MoveTo_System_Int32_System_Int32_">
         /// BOOSE.ICanvas.MoveTo
         /// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CanvasException.html">
+		/// BOOSE.CanvasException
+		/// </seealso>
         public void MoveTo(int x, int y)
         {
             if (x < 0 || y < 0 || x > displayWidth || y > displayHeight)
@@ -201,10 +225,14 @@ namespace MainProject
         /// <param name="width">Width of the rectangle.</param>
         /// <param name="height">Height of the rectangle.</param>
         /// <param name="filled">Whether the rectangle is filled or not.</param>
-        /// 
+        /// <exception cref="BOOSE.CanvasException">Thrown when the width or height is less than or equal to zero.</exception>
+		///
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Rect_System_Int32_System_Int32_System_Boolean_">
         /// BOOSE.ICanvas.Rect
         /// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CanvasException.html">
+		/// BOOSE.CanvasException
+		/// </seealso>
         public void Rect(int width, int height, bool filled)
         {
             if (width <= 0 && height <= 0)
@@ -245,10 +273,14 @@ namespace MainProject
         ///
         /// <param name="width">Width of the canvas.</param>
         /// <param name="height">Height of the canvas.</param>
-        /// 
+        /// <exception cref="BOOSE.CanvasException">Thrown when the width or height is less than or equal to zero.</exception>
+		///
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Set_System_Int32_System_Int32_">
         /// BOOSE.ICanvas.Set
         /// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CanvasException.html">
+		/// BOOSE.CanvasException
+		/// </seealso>
         public void Set(int width, int height)
         {
 			if (width <= 0 && height <= 0)
@@ -275,10 +307,14 @@ namespace MainProject
         /// <param name="red">Red value of the colour.</param>
         /// <param name="green">Green value of the colour.</param>
         /// <param name="blue">Blue value of the colour.</param>
+		/// <exception cref="BOOSE.CanvasException">Thrown when the colour values are out of bounds.</exception>
         /// 
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_SetColour_System_Int32_System_Int32_System_Int32_">
         /// BOOSE.ICanvas.SetColour
         /// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CanvasException.html">
+		/// BOOSE.CanvasException
+		/// </seealso>
         public void SetColour(int red, int green, int blue)
         {
             if (red < 0 || red > 255 || green < 0 || green > 255 || blue < 0 || blue > 255)
@@ -295,10 +331,14 @@ namespace MainProject
         ///
         /// <param name="width">Width of the triangle.</param>
         /// <param name="height">Height of the triangle.</param>
-        /// 
+        /// <exception cref="CanvasException">Thrown when the width or height is invalid.</exception>
+		///
         /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.ICanvas.html#BOOSE_ICanvas_Tri_System_Int32_System_Int32_">
         /// BOOSE.ICanvas.Tri
         /// </seealso>
+		/// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CanvasException.html">
+		/// BOOSE.CanvasException
+		/// </seealso>
         public void Tri(int width, int height)
         {
             if (width <= 0 && height <= 0)
