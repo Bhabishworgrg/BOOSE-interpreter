@@ -42,8 +42,8 @@ namespace MainProject
         {
             base.Execute();
 
-            width = Paramsint[0];
-            height = Paramsint[1];
+            width = base.Paramsint[0];
+            height = base.Paramsint[1];
             base.Canvas.Tri(width, height);
         }
 
@@ -64,7 +64,7 @@ namespace MainProject
         {
             if (parameterList.Length != 2)
             {
-                throw new CommandException("Invalid number of parameters in " + ToString() + " :tri <width>,<height>");
+                throw new CommandException($"Invalid number of parameters in {ToString()} :tri <width>,<height>");
             }
         }
     }

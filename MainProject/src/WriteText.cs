@@ -11,7 +11,7 @@ namespace MainProject
     /// </seealso>
     public class WriteText : CommandOneParameter
     {
-        private string text;
+        private string text = "";
 
         /// <summary>
         /// Blank constructor for factory instantiation.
@@ -38,15 +38,23 @@ namespace MainProject
         /// </seealso>
         public override void Execute()
         {
-            try
-            {
-                base.Execute();
-                text = Program.EvaluateExpression(Parameters[0]);
-            }
-            catch (Exception ex)
-            {
-                text = ParameterList;
-            }
+            base.Execute();
+           
+			if (base.Parameters.Length > 1)
+			{
+				text = base.ParameterList[1..^2];
+				base.Canvas.WriteText(text);
+				return;
+			}
+
+			try
+			{
+				text = base.Program.EvaluateExpression(base.Parameters[0]);
+			}
+			catch (StoredProgramException)
+			{
+				text = base.Program.EvaluateExpressionWithString(base.Parameters[0]);
+			}
 
             base.Canvas.WriteText(text);
         }
@@ -68,7 +76,7 @@ namespace MainProject
         {
             if (parameterList[0] == "")
             {
-                throw new CommandException("Invalid number of parameters in " + ToString() + " :write <text>");
+                throw new CommandException($"Invalid number of parameters in {ToString()} :write <text>");
             }
         }
 

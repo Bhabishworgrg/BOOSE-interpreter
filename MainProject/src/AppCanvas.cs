@@ -66,7 +66,7 @@ namespace MainProject
             get => penColour;
             set
             {
-                penColour = (Color)value;
+                penColour = (Color) value;
                 solidBrush.Color = penColour;
                 pen.Color = penColour;
             }

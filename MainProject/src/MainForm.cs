@@ -10,10 +10,11 @@ namespace MainProject
     public partial class MainForm : Form
     {
         private ICanvas canvas;
+		private Bitmap bitmap;
 		private CommandFactory commandFactory;
         private StoredProgram storedProgram;
-        private Parser parser;
-
+        private IParser parser;
+		
 		/// <summary>
 		/// Constructor for the main form.
 		/// </summary>
@@ -22,6 +23,7 @@ namespace MainProject
             InitializeComponent();
 
 			canvas = new AppCanvas();
+			bitmap = (Bitmap) canvas.getBitmap();
 			commandFactory = new ExtendedCommandFactory();
             storedProgram = new StoredProgram(canvas);
             parser = new Parser(commandFactory, storedProgram);
@@ -36,7 +38,6 @@ namespace MainProject
         private void picbox_output_Paint(object sender, PaintEventArgs e)
         {
             Graphics graphics = e.Graphics;
-			Bitmap bitmap = (Bitmap) canvas.getBitmap();
             graphics.DrawImageUnscaled(bitmap, 0, 0);
         }
 
@@ -53,7 +54,7 @@ namespace MainProject
             {
                 ExecuteCommand(txtbox_input.Text);
             }
-            catch (Exception ex)
+            catch (BOOSEException ex)
             {
                 MessageBox.Show(ex.Message);
             }
