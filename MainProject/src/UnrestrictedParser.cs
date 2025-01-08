@@ -11,8 +11,13 @@ namespace BOOSE
 			this.storedProgram = storedProgram;
 		}
 
-		public ICommand ParseCommand(string line)
+		public ICommand? ParseCommand(string line)
 		{
+			if (line[0] == '*')
+			{
+				return null;
+			}
+
 			string commandType = line.Split(' ')[0];
 			string parameters = line[commandType.Length..].Trim();
 
@@ -28,11 +33,16 @@ namespace BOOSE
 			string[] lines = storedProgram.Split('\n');
 			for (int lineNo = 1; lineNo < lines.Length + 1; lineNo++)
 			{
-				string line = lines[lineNo-1];
+				string line = lines[lineNo - 1].Trim();
 				
+				if (line ==	"")
+				{
+					continue;
+				}
+
 				try
 				{
-					ICommand command = ParseCommand(line);
+					ICommand? command = ParseCommand(line);
 				}
 				catch (BOOSEException ex)
 				{

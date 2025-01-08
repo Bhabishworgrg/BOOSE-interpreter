@@ -70,6 +70,7 @@ namespace MainProject
             parser.ParseProgram(input);
             storedProgram.Run();
             Refresh();
+			canvas.Reset();
         }
     }
 }
