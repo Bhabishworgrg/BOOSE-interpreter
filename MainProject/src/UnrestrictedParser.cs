@@ -1,4 +1,6 @@
-namespace BOOSE
+using BOOSE;
+
+namespace MainProject
 {
     public class UnrestrictedParser : IParser
     {
@@ -24,7 +26,8 @@ namespace BOOSE
 			
 			if (elements[1] == "=")
 			{
-				parameters = commandType + " " + parameters.Trim();
+				parameters = $"{commandType} {parameters.Trim()}";
+				
 				Evaluation variable = storedProgram.GetVariable(commandType);
 				if (variable is Int)
 				{
