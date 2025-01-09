@@ -67,6 +67,7 @@ namespace MainProject
 		/// <param name="input">Input command to execute.</param>
         public void ExecuteCommand(string input)
         {
+			canvas.Clear();
             parser.ParseProgram(input);
             storedProgram.Run();
             Refresh();

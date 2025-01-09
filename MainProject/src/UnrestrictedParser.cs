@@ -29,7 +29,7 @@ namespace MainProject
 				parameters = $"{commandType} {parameters.Trim()}";
 				
 				Evaluation variable = storedProgram.GetVariable(commandType);
-				if (variable is Int)
+				if (variable is UnrestrictedInt)
 				{
 					commandType = "int";
 				}

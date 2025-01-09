@@ -20,13 +20,15 @@ namespace MainProject
         public override ICommand MakeCommand(string commandType)
         {
             commandType = commandType.ToLower().Trim();
-            switch (commandType)
-            {
-                case "write":
-                    return new WriteText();
-                case "tri":
-                    return new Tri();
-            }
+			switch (commandType)
+			{
+				case "write":
+					return new WriteText();
+				case "tri":
+					return new Tri();
+				case "int":
+					return new UnrestrictedInt();
+			}
 
             return base.MakeCommand(commandType);
         }
