@@ -18,8 +18,19 @@ namespace BOOSE
 				return null;
 			}
 
-			string commandType = line.Split(' ')[0];
+			string[] elements = line.Split(' ');
+			string commandType = elements[0];
 			string parameters = line[commandType.Length..].Trim();
+			
+			if (elements[1] == "=")
+			{
+				parameters = commandType + " " + parameters.Trim();
+				Evaluation variable = storedProgram.GetVariable(commandType);
+				if (variable is Int)
+				{
+					commandType = "int";
+				}
+			}
 
 			ICommand command = commandFactory.MakeCommand(commandType);
 			command.Set(storedProgram, parameters);
