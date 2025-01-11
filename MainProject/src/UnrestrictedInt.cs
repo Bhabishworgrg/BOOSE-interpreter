@@ -14,13 +14,13 @@ namespace MainProject
 		{
 			base.Execute();
 			
-			if (int.TryParse(base.evaluatedExpression, out value))
+			if (int.TryParse(base.evaluatedExpression, out base.value))
 			{
 				base.Program.UpdateVariable(base.varName, base.value);
 				return;
 			}
 
-			if (double.TryParse(base.evaluatedExpression, out double doubleValue))
+			if (double.TryParse(base.evaluatedExpression, out _))
 			{
 				throw new StoredProgramException("Can't convert real number to integer without data loss, use cast");
 			}

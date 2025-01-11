@@ -67,11 +67,10 @@ namespace MainProject
 		/// <param name="input">Input command to execute.</param>
         public void ExecuteCommand(string input)
         {
-			canvas.Clear();
+			storedProgram.ResetProgram();
             parser.ParseProgram(input);
             storedProgram.Run();
             Refresh();
-			canvas.Reset();
         }
     }
 }
