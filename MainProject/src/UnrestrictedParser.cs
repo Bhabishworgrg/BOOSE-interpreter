@@ -24,14 +24,20 @@ namespace MainProject
 			string commandType = elements[0];
 			string parameters = line[commandType.Length..].Trim();
 			
-			if (elements[1] == "=")
+			if (elements.Length >= 2 && elements[1] == "=")
 			{
 				parameters = $"{commandType} {parameters.Trim()}";
 				
 				Evaluation variable = storedProgram.GetVariable(commandType);
-				if (variable is UnrestrictedInt)
+
+				switch (variable)
 				{
-					commandType = "int";
+					case UnrestrictedInt:
+						commandType = "int";
+						break;
+					case UnrestrictedReal:
+						commandType = "real";
+						break;
 				}
 			}
 
