@@ -28,6 +28,8 @@ namespace MainProject
 					return new Tri();
 				case "int":
 					return new UnrestrictedInt();
+				case "real":
+					return new UnrestrictedReal();
 			}
 
             return base.MakeCommand(commandType);
