@@ -20,6 +20,11 @@ namespace MainProject
 				return null;
 			}
 
+			line = line.Replace("+", " + ");
+			line = line.Replace("-", " - ");
+			line = line.Replace("*", " * ");
+			line = line.Replace("/", " / ");
+
 			string[] elements = line.Split(' ');
 			string commandType = elements[0];
 			string parameters = line[commandType.Length..].Trim();
