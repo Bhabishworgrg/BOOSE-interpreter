@@ -30,7 +30,8 @@ namespace MainProject
 					return new UnrestrictedInt();
 				case "real":
 					return new UnrestrictedReal();
-			}
+				case "array":
+					return new UnrestrictedArray();
 
             return base.MakeCommand(commandType);
         }
