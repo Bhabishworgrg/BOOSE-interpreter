@@ -34,6 +34,9 @@ namespace MainProject
 					return new UnrestrictedArray();
 				case "poke":
 					return new UnrestrictedPoke();
+				case "peek":
+					return new UnrestrictedPeek();
+			}	
 
             return base.MakeCommand(commandType);
         }
