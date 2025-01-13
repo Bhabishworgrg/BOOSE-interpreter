@@ -25,7 +25,7 @@ namespace MainProject
 			canvas = new AppCanvas();
 			bitmap = (Bitmap) canvas.getBitmap();
 			commandFactory = new ExtendedCommandFactory();
-            storedProgram = new StoredProgram(canvas);
+            storedProgram = new UnrestrictedStoredProgram(canvas);
             parser = new UnrestrictedParser(commandFactory, storedProgram);
 		}
 
