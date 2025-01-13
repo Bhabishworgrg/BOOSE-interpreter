@@ -38,6 +38,8 @@ namespace MainProject
 					return new UnrestrictedPeek();
 				case "if":
 					return new UnrestrictedIf();
+				case "else":
+					return new UnrestrictedElse();
 			}	
 
             return base.MakeCommand(commandType);
