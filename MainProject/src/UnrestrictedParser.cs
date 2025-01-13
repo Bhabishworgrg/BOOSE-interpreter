@@ -1,4 +1,5 @@
 using BOOSE;
+using System.Text.RegularExpressions;
 
 namespace MainProject
 {
@@ -20,10 +21,14 @@ namespace MainProject
 				return null;
 			}
 
+			line = line.Trim();
 			line = line.Replace("+", " + ");
-			line = line.Replace("-", " - ");
 			line = line.Replace("*", " * ");
 			line = line.Replace("/", " / ");
+
+			// Add spaces around minus signs that are subtraction operators.
+			// Ignore minus signs that are part of negative numbers.
+			line = Regex.Replace(line, @"(?<=\S)-", " - ");
 
 			string[] elements = line.Split(' ');
 			string commandType = elements[0];
