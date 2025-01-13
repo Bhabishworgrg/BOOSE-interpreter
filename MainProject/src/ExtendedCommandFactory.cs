@@ -40,6 +40,8 @@ namespace MainProject
 					return new UnrestrictedIf();
 				case "else":
 					return new UnrestrictedElse();
+				case "while":
+					return new UnrestrictedWhile();
 			}	
 
             return base.MakeCommand(commandType);
