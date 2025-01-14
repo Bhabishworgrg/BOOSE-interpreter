@@ -60,7 +60,9 @@ namespace MainProject
 
         public void ParseProgram(string storedProgram)
         {
-			string[] lines = storedProgram.Split('\n');
+			storedProgram += "\nint endofprogram = 0";
+
+            string[] lines = storedProgram.Split('\n');
 			for (int lineNo = 1; lineNo < lines.Length + 1; lineNo++)
 			{
 				string line = lines[lineNo - 1].Trim();
