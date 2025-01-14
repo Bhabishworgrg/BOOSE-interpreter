@@ -2,7 +2,7 @@ using BOOSE;
 
 namespace MainProject
 {
-	public class UnrestrictedPeek : UnrestrictedArray
+	public class UnrestrictedPeek : UnrestrictedArray, ICommand
 	{
 		public UnrestrictedPeek() { }
 
@@ -10,31 +10,30 @@ namespace MainProject
 		{
 			if (Parameters.Length != 2 && Parameters.Length != 3)
 			{
-				throw new CommandException("sth 2");
+				throw new CommandException("Invalid array parameters");
 			}
 		}
 
 		public override void Compile()
 		{
-			ProcessArrayParametersCompile(peekOrPoke: false);
+			ProcessArrayParametersCompile(false);
 		}
 
 		public override void Execute()
 		{
-			ProcessArrayParametersExecute(peekOrPoke: false);
-			if (base.type == "int")
-			{
-				base.Program.UpdateVariable(peekVar, valueInt);
-				return;
-			}
+			ProcessArrayParametersExecute(false);
 
-			if (base.type == "real")
+			switch (base.type)
 			{
-				base.Program.UpdateVariable(peekVar, valueReal);
-				return;
+				case "int":
+					base.Program.UpdateVariable(base.peekVar, base.valueInt);
+					break;
+				case "real":
+					base.Program.UpdateVariable(base.peekVar, base.valueReal);
+					break;
+				default:
+					throw new CommandException("Invalid array type");
 			}
-
-			throw new CommandException("sth 3");
 		}
 	}
 }

@@ -26,8 +26,7 @@ namespace MainProject
 			line = line.Replace("*", " * ");
 			line = line.Replace("/", " / ");
 
-			// Add spaces around minus signs that are subtraction operators.
-			// Ignore minus signs that are part of negative numbers.
+			// To only replace subtraction operator and not the negative sign.
 			line = Regex.Replace(line, @"(?<=\S)-", " - ");
 
 			string[] elements = line.Split(' ');
@@ -39,7 +38,6 @@ namespace MainProject
 				parameters = $"{commandType} {parameters.Trim()}";
 				
 				Evaluation variable = storedProgram.GetVariable(commandType);
-
 				switch (variable)
 				{
 					case UnrestrictedInt:

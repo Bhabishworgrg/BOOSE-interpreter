@@ -9,7 +9,7 @@ namespace MainProject
     /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CommandTwoParameters.html">
     /// BOOSE.CommandTwoParameters
     /// </seealso>
-    public class Tri : CommandTwoParameters
+    public class Tri : CommandTwoParameters, ICommand
     {
         private int width, height;
 

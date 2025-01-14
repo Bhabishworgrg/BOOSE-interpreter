@@ -2,7 +2,7 @@ using BOOSE;
 
 namespace MainProject
 {
-	public class UnrestrictedIf : CompoundCommand
+	public class UnrestrictedIf : CompoundCommand, ICommand
 	{
 		public UnrestrictedIf()
 		{

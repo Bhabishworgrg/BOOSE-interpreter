@@ -2,7 +2,7 @@ using BOOSE;
 
 namespace MainProject
 {
-	public class UnrestrictedEnd : CompoundCommand
+	public class UnrestrictedEnd : CompoundCommand, ICommand
 	{
 		public UnrestrictedEnd()
 		{
@@ -25,7 +25,7 @@ namespace MainProject
 				throw new CommandException("Mismatched end, should be end while");
 			}
 
-			if (base.CorrespondingCommand is For && !base.ParameterList.Contains("for"))
+			if (base.CorrespondingCommand is UnrestrictedFor && !base.ParameterList.Contains("for"))
 			{
 				throw new CommandException("Mismatched end, should be end for");
 			}
@@ -40,7 +40,7 @@ namespace MainProject
 			{
 				base.Program.PC = base.CorrespondingCommand.LineNumber - 1;
 			}
-			else if (base.CorrespondingCommand is For forCmd)
+			else if (base.CorrespondingCommand is UnrestrictedFor forCmd)
 			{
 				Evaluation loopControlV = forCmd.LoopControlV;
 				int num = loopControlV.Value + forCmd.Step;

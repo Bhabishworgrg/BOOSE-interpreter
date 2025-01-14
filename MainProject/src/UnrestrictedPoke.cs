@@ -2,7 +2,7 @@ using BOOSE;
 
 namespace MainProject
 {
-	public class UnrestrictedPoke : UnrestrictedArray
+	public class UnrestrictedPoke : UnrestrictedArray, ICommand
 	{
 		public UnrestrictedPoke() { }
 
@@ -10,18 +10,18 @@ namespace MainProject
 		{
 			if (parameterList.Length != 2 && parameterList.Length != 3)
 			{
-				throw new CommandException("sth 1");
+				throw new CommandException("Invalid array parameters");
 			}
 		}
 
 		public override void Compile()
 		{
-			ProcessArrayParametersCompile(peekOrPoke: true);
+			ProcessArrayParametersCompile(true);
 		}
 
 		public override void Execute()
 		{
-			ProcessArrayParametersExecute(peekOrPoke: true);
+			ProcessArrayParametersExecute(true);
 		}
 
 		public override void Set(StoredProgram Program, string Params)

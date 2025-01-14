@@ -4,13 +4,13 @@ namespace MainProject
 {
 	public class UnrestrictedInt : Evaluation, ICommand
 	{
-		public void Compile()
+		public override void Compile()
 		{
 			base.Compile();
 			base.Program.AddVariable(this);
 		}
 
-		public void Execute()
+		public override void Execute()
 		{
 			base.Execute();
 			

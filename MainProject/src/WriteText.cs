@@ -9,7 +9,7 @@ namespace MainProject
     /// <seealso href="https://dmullier.github.io/BOOSE-Docs/BOOSE.CommandOneParameter.html">
     /// BOOSE.CommandOneParameter
     /// </seealso>
-    public class WriteText : CommandOneParameter
+    public class WriteText : CommandOneParameter, ICommand
     {
         private string text = "";
 
@@ -40,9 +40,11 @@ namespace MainProject
         {
             base.Execute();
            
+			// For cases when text has "," in it.
+			// Can't use base.Parameters[0] as it will only return the text before ",".
 			if (base.Parameters.Length > 1)
 			{
-				text = base.ParameterList[1..^2];
+				text = base.ParameterList[1..^1];
 				base.Canvas.WriteText(text);
 				return;
 			}
@@ -60,7 +62,7 @@ namespace MainProject
         }
 
         /// <summary>
-        /// Ensures that only one parameter is passed.
+        /// Ensures that the parameter isn't empty.
         /// </summary>
         /// 
         /// <param name="parameterList">List of parameters.</param>

@@ -2,7 +2,7 @@ using BOOSE;
 
 namespace MainProject
 {
-	public class UnrestrictedElse : Else 
+	public class UnrestrictedElse : Else, ICommand
 	{
 		public UnrestrictedElse()
 		{

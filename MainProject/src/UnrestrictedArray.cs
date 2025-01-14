@@ -2,7 +2,7 @@ using BOOSE;
 
 namespace MainProject
 {
-	public class UnrestrictedArray : BOOSE.Array
+	public class UnrestrictedArray : BOOSE.Array, ICommand
 	{
         public override void CheckParameters(string[] parameterList)
         {
@@ -38,6 +38,7 @@ namespace MainProject
 
 			string[] elements = base.parameterList.Split('=');
 			string[] valueRef = elements[index2].Trim().Split(' ');
+			
 			if (elements.Length < 2 || valueRef.Length < 1)
 			{
 				throw new CommandException("Invalid array parameters");

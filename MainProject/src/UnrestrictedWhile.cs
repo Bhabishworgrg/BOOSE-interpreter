@@ -2,7 +2,7 @@ using BOOSE;
 
 namespace MainProject
 {
-	public class UnrestrictedWhile : CompoundCommand
+	public class UnrestrictedWhile : CompoundCommand, ICommand
 	{
 		public UnrestrictedWhile()
 		{

@@ -4,20 +4,20 @@ namespace MainProject
 {
     public class UnrestrictedStoredProgram : StoredProgram
 	{
-		private Stack<ConditionalCommand> stack = new Stack<ConditionalCommand>();
+		private Stack<ConditionalCommand> conditionalPair = new Stack<ConditionalCommand>();
 
 		public UnrestrictedStoredProgram(ICanvas canvas) : base(canvas) { }
 
         public override void Push(ConditionalCommand Com)
         {
-            stack.Push(Com);
+            conditionalPair.Push(Com);
         }
 
         public override ConditionalCommand Pop()
 		{
 			try
 			{
-				return stack.Pop();
+				return conditionalPair.Pop();
 			}
 			catch (InvalidOperationException)
 			{
@@ -48,7 +48,8 @@ namespace MainProject
 					throw new StoredProgramException("Infinite loop");
 				}
             }
-			if (stack.Count != 0)
+
+			if (conditionalPair.Count != 0)
 			{
 				Pop();
 				base.SyntaxOk = false;
