@@ -34,18 +34,20 @@ namespace MainProject
 				ICommand command = (ICommand) base.NextCommand();
 				try
 				{
-					command.Execute();
+                    num++;
+                    command.Execute();
 				}
 				catch (BOOSEException ex)
 				{
 					base.SyntaxOk = false;
 					throw new StoredProgramException($"{ex.Message} {PC}");
 				}
+
 				if (num > 50000 && PC < 20)
 				{
 					throw new StoredProgramException("Infinite loop");
 				}
-			}
+            }
 			if (stack.Count != 0)
 			{
 				Pop();
@@ -53,6 +55,5 @@ namespace MainProject
 				throw new StoredProgramException("Missing end");
 			}
 		}
-    
 	}
 }
