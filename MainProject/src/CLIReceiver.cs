@@ -1,3 +1,5 @@
+using BOOSE;
+
 namespace MainProject
 {
 	public class CLIReceiver
@@ -15,6 +17,12 @@ namespace MainProject
 		public void CLIVersion()
 		{
 			Console.WriteLine(AboutBOOSE.about());
+		}
+
+		public void CLIInit()
+		{
+			Console.WriteLine("Creating an empty BOOSE project...");
+			Console.WriteLine("Empty BOOSE project created.");
 		}
 	}
 }
