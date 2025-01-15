@@ -30,5 +30,11 @@ namespace MainProject
 			Console.WriteLine("Opening GUI mode...");
 			Console.WriteLine("GUI mode opened.");
 		}
+
+		public void CLIGenerate()
+		{
+			Console.WriteLine("Generating image...");
+			Console.WriteLine("Image generated.");
+		}
 	}
 }
