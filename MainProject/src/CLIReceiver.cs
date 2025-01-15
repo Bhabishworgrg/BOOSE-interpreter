@@ -24,5 +24,11 @@ namespace MainProject
 			Console.WriteLine("Creating an empty BOOSE project...");
 			Console.WriteLine("Empty BOOSE project created.");
 		}
+
+		public void CLIGUI()
+		{
+			Console.WriteLine("Opening GUI mode...");
+			Console.WriteLine("GUI mode opened.");
+		}
 	}
 }
