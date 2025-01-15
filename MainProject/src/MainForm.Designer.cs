@@ -74,7 +74,7 @@
             MaximumSize = new Size(1258, 853);
             MinimumSize = new Size(1258, 853);
             Name = "MainForm";
-            Text = "ASE Assignment App";
+            Text = "BOOSE Interpreter";
             ((System.ComponentModel.ISupportInitialize)picbox_output).EndInit();
             ResumeLayout(false);
             PerformLayout();
