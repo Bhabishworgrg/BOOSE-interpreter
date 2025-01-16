@@ -1,17 +1,31 @@
 namespace MainProject
 {
-	public class CLIInit : ICLICommand
-	{
-		private CLIReceiver receiver;
+    /// <summary>
+    /// Represents the CLI command to initialize the application.
+    /// </summary>
+    public class CLIInit : ICLICommand
+    {
+        /// <summary>
+        /// The receiver that performs the actual operation for this command.
+        /// </summary>
+        private CLIReceiver receiver;
 
-		public CLIInit(CLIReceiver receiver)
-		{
-			this.receiver = receiver;
-		}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CLIInit"/> class with the specified receiver.
+        /// </summary>
+		///
+        /// <param name="receiver">The receiver responsible for handling the command logic.</param>
+        public CLIInit(CLIReceiver receiver)
+        {
+            this.receiver = receiver;
+        }
 
-		public void Execute()
-		{
-			receiver.CLIInit();
-		}
-	}
+        /// <summary>
+        /// Executes the initialization command by invoking the receiver's corresponding method.
+        /// </summary>
+        public void Execute()
+        {
+            receiver.CLIInit();
+        }
+    }
 }

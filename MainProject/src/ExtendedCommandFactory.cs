@@ -46,6 +46,8 @@ namespace MainProject
 					return new UnrestrictedFor();
 				case "end":
 					return new UnrestrictedEnd();
+				case "method":
+					return new UnrestrictedMethod();
 			}	
 
             return base.MakeCommand(commandType);

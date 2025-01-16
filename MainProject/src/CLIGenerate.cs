@@ -1,17 +1,31 @@
 namespace MainProject
 {
-	public class CLIGenerate : ICLICommand
-	{
-		private CLIReceiver receiver;
+    /// <summary>
+    /// Represents the CLI command to generate output.
+    /// </summary>
+    public class CLIGenerate : ICLICommand
+    {
+        /// <summary>
+        /// The receiver that performs the actual operation for this command.
+        /// </summary>
+        private CLIReceiver receiver;
 
-		public CLIGenerate(CLIReceiver receiver)
-		{
-			this.receiver = receiver;
-		}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CLIGenerate"/> class with the specified receiver.
+        /// </summary>
+		///
+        /// <param name="receiver">The receiver responsible for handling the command logic.</param>
+        public CLIGenerate(CLIReceiver receiver)
+        {
+            this.receiver = receiver;
+        }
 
-		public void Execute()
-		{
-			receiver.CLIGenerate();
-		}
-	}
+        /// <summary>
+        /// Executes the generate command by invoking the receiver's corresponding method.
+        /// </summary>
+        public void Execute()
+        {
+            receiver.CLIGenerate();
+        }
+    }
 }

@@ -1,17 +1,31 @@
 namespace MainProject
 {
-	public class CLIGUI : ICLICommand
-	{
-		private CLIReceiver receiver;
+    /// <summary>
+    /// Represents the CLI command to launch the GUI interface.
+    /// </summary>
+    public class CLIGUI : ICLICommand
+    {
+        /// <summary>
+        /// The receiver that performs the actual operation for this command.
+        /// </summary>
+        private CLIReceiver receiver;
 
-		public CLIGUI(CLIReceiver receiver)
-		{
-			this.receiver = receiver;
-		}
+        /// <summary>
+        /// Initializes a new instance of the <see cref="CLIGUI"/> class with the specified receiver.
+        /// </summary>
+		///
+        /// <param name="receiver">The receiver responsible for handling the command logic.</param>
+        public CLIGUI(CLIReceiver receiver)
+        {
+            this.receiver = receiver;
+        }
 
-		public void Execute()
-		{
-			receiver.CLIGUI();
-		}
-	}
+        /// <summary>
+        /// Executes the GUI command by invoking the receiver's corresponding method.
+        /// </summary>
+        public void Execute()
+        {
+            receiver.CLIGUI();
+        }
+    }
 }
