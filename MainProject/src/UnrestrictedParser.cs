@@ -65,6 +65,8 @@ namespace MainProject
                     case UnrestrictedReal:
                         commandType = "real";
                         break;
+					default:
+						throw new ParserException("Invalid variable type");
                 }
             }
 
@@ -98,6 +100,20 @@ namespace MainProject
                 try
                 {
                     ICommand? command = ParseCommand(line);
+					
+					if (command is UnrestrictedMethod && command != null)
+                    {
+                        UnrestrictedMethod method = (UnrestrictedMethod) command;
+                        command = ParseCommand($"{method.Type} {method.MethodName}");
+                        this.storedProgram.Remove(command);
+                        
+                        foreach (string variable in method.LocalVariables)
+                        {
+                            command = ParseCommand(variable);
+                            ((Evaluation) command!).Local = true;
+                            this.storedProgram.Remove(command);
+                        }
+                    }
                 }
                 catch (BOOSEException ex)
                 {

@@ -84,6 +84,10 @@ namespace MainProject
                     base.Program.PC = base.CorrespondingCommand.LineNumber;
                 }
             }
+			else if (base.CorrespondingCommand is UnrestrictedMethod)
+			{
+				base.Program.PC = base.CorrespondingCommand.ReturnLineNumber;
+			}
         }
     }
 }
