@@ -41,7 +41,7 @@ namespace MainProject
                     command = new CLIGUI(receiver);
                     break;
                 default:
-                    command = new CLIGenerate(receiver);
+                    command = new CLIGenerate(receiver, option);
                     break;
             }
 

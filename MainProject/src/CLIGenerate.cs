@@ -5,6 +5,8 @@ namespace MainProject
     /// </summary>
     public class CLIGenerate : ICLICommand
     {
+		private string option;
+
         /// <summary>
         /// The receiver that performs the actual operation for this command.
         /// </summary>
@@ -15,9 +17,10 @@ namespace MainProject
         /// </summary>
 		///
         /// <param name="receiver">The receiver responsible for handling the command logic.</param>
-        public CLIGenerate(CLIReceiver receiver)
+        public CLIGenerate(CLIReceiver receiver, string option)
         {
             this.receiver = receiver;
+			this.option = option;
         }
 
         /// <summary>
@@ -25,7 +28,7 @@ namespace MainProject
         /// </summary>
         public void Execute()
         {
-            receiver.CLIGenerate();
+            receiver.CLIGenerate(option);
         }
     }
 }

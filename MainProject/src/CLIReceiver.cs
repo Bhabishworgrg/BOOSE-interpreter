@@ -13,20 +13,22 @@ namespace MainProject
         /// </summary>
         public void CLIHelp()
         {
-            Console.WriteLine("Usage: BOOSE [options] [source files]");
-            Console.WriteLine("options:");
-            Console.WriteLine("\t-h\tShow this help message");
-            Console.WriteLine("\t-v\tShow version information");
-            Console.WriteLine("\t-i\tCreate an empty boose project");
-            Console.WriteLine("\t-g\tOpen GUI mode");
-        }
+            Console.Write(
+				"Usage: BOOSE [options] [source files]\n" +
+                "options:\n" +
+                "\t-h\tShow this help message\n" +
+                "\t-v\tShow version information\n" +
+                "\t-i\tCreate an empty boose project\n" +
+                "\t-g\tOpen GUI mode\n"
+			);
+		}
 
         /// <summary>
         /// Displays version information about the BOOSE application.
         /// </summary>
         public void CLIVersion()
         {
-            Console.WriteLine(AboutBOOSE.about());
+            Console.Write(AboutBOOSE.about());
         }
 
         /// <summary>
@@ -44,7 +46,7 @@ namespace MainProject
 				{"src\\program.boose", "write \"hello world\""},
 				{".gitignore", "build/"},
 				{"README.md", "This is an empty BOOSE project.\nSource files go in the src and output images go in the build. Run make.bat to build the image."},
-				{"make.bat", "boose src\\*.boose"}
+				{"make.bat", "boose src\\program.boose"}
 			};
 
 			Directory.CreateDirectory(mainDir);
@@ -90,11 +92,11 @@ namespace MainProject
         /// <summary>
         /// Generates an image and notifies the user upon completion.
         /// </summary>
-        public void CLIGenerate()
+        public void CLIGenerate(string fileName)
         {
             Console.WriteLine("Generating image...");
 			
-			string program = File.ReadAllText("src\\program.boose");
+			string program = File.ReadAllText(fileName);
 			ICanvas canvas = new AppCanvas();
 			Bitmap bitmap = (Bitmap) canvas.getBitmap();
 			Interpreter interpreter = new Interpreter(canvas, bitmap);
