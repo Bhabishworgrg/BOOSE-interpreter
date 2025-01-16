@@ -21,11 +21,17 @@ namespace MainProject
             Console.WriteLine("\t-g\tOpen GUI mode");
         }
 
+        /// <summary>
+        /// Displays version information about the BOOSE application.
+        /// </summary>
         public void CLIVersion()
         {
             Console.WriteLine(AboutBOOSE.about());
         }
 
+        /// <summary>
+        /// Creates an empty BOOSE project and notifies the user.
+        /// </summary>
         public void CLIInit()
         {
             Console.WriteLine("Creating an empty BOOSE project...");
