@@ -3,8 +3,14 @@ using System.Diagnostics;
 
 namespace MainProject
 {
+    /// <summary>
+    /// Represents the receiver in the command design pattern, containing the actual logic for CLI operations.
+    /// </summary>
     public class CLIReceiver
     {
+        /// <summary>
+        /// Displays help information for using the BOOSE application.
+        /// </summary>
         public void CLIHelp()
         {
             Console.WriteLine("Usage: BOOSE [options] [source files]");
@@ -65,4 +71,40 @@ namespace MainProject
 			}
 
 			Console.WriteLine("Empty BOOSE project created.");
+        }
+
+        /// <summary>
+        /// Launches the GUI mode for the BOOSE application.
+        /// </summary>
+        public void CLIGUI()
+        {
+			Program.RunGUIBOOSE();
+        }
+
+        /// <summary>
+        /// Generates an image and notifies the user upon completion.
+        /// </summary>
+        public void CLIGenerate()
+        {
+            Console.WriteLine("Generating image...");
+			
+			string program = File.ReadAllText("src\\program.boose");
+			ICanvas canvas = new AppCanvas();
+			Bitmap bitmap = (Bitmap) canvas.getBitmap();
+			Interpreter interpreter = new Interpreter(canvas, bitmap);
+			
+			interpreter.ExecuteProgram(program);
+			
+			if (Directory.Exists("build"))
+			{
+				Console.WriteLine("Image generated in build directory.");
+				interpreter.BuildImage("build\\output.png");
+			}
+			else
+			{
+				Console.WriteLine("No build directory found. Generating image to current directory.");
+				interpreter.BuildImage("output.png");
+			}
+        }
+    }
 }
