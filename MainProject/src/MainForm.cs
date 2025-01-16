@@ -24,6 +24,8 @@ namespace MainProject
             bitmap = (Bitmap) canvas.getBitmap();
             interpreter = new Interpreter(canvas, bitmap);
 			
+			Console.WriteLine("BOOSE interpreter started.");
+			Console.WriteLine(AboutBOOSE.about());
 		}
 
 		/// <summary>

@@ -8,6 +8,7 @@ namespace MainProject
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
+        /// <param name="args">Command-line arguments passed to the application.</param>
         [STAThread]
         public static void Main(string[] args)
         {
@@ -17,6 +18,7 @@ namespace MainProject
 				return;
             }
 
+            Console.WriteLine("Starting BOOSE interpreter...");
 			RunGUIBOOSE();
         }
 
@@ -33,11 +35,14 @@ namespace MainProject
 
             if (setup.HasAdminRights())
             {
+                Console.WriteLine("Administrative rights detected. Creating batch file...");
                 setup.CreateBatchFile(filePath);
+                Console.WriteLine("Batch file created. BOOSE is now a command-line tool.");
             }
 
             if (!File.Exists(filePath))
             {
+                Console.WriteLine("Prompting user to enable BOOSE as a command-line tool...");
 
                 DialogResult option = MessageBox.Show(
                     "Do you want to enable BOOSE as a command-line tool too? " +
@@ -53,6 +58,7 @@ namespace MainProject
                     return;
                 }
 
+                Console.WriteLine("User declined.");
             }
 
             ApplicationConfiguration.Initialize();
