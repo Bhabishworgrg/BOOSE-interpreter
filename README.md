@@ -52,28 +52,46 @@ DONE
 #### 1 Further Version Control (1) 5 marks
 	You must continue to use VC to a professional standard with frequent and clear commits
 	Your Readme.md must be up to date
+
+DONE
+
 #### 2 Use of Interfaces (1) 5 marks 
 	Interfaces to be used for all classes where appropriate
+
+DONE
+
 #### 3 Further Unit Testing (1) 5 marks
 	Tests for full program all of the facilities completed in 5,6 and 7 below
 	It is up to you how design your tests (i.e. one test per facility or one test testing many but they must be clearly documented with XML comments)
+
+DONE
+
 #### 4 Design Patterns (1) 5 marks 
 	Use of factory Design Pattern for command creation
 	Demonstrate the use of another design pattern of your choice
 	(for 5,6 and 7 you can click the links to see the example BOOSE programs that must be run, these are in your Portfolio. You must run the unrestricted programs and replace the image already there with an 	image of your BOOSE Interpreter running the BOOSE programs. You may show further programs in your portfolio.)
+
+DONE
+
 #### 5 Replaced variables (2)
 	Int	4 marks
 	Real	4 marks
 	Array	5 marks
+
+DONE
+
 #### 6 Replaced if, while, for (2)
 	While 	5 marks
 	For	6 marks
 	If else	6 marks
-#### 7 Replaced Methods (2) 5 marks
 
+DONE
+
+#### 7 Replaced Methods (2) 5 marks
+DONE
 
 #### 8 Additional (web version, text-based version, extension to BOOSE itself, etc, discuss with your tutor) (2) 10 marks
-
+DONE
 
 ### Tutor's Feedback
 
