@@ -10,11 +10,9 @@ namespace MainProject
     public partial class MainForm : Form
     {
         private ICanvas canvas;
-		private Bitmap bitmap;
-		private CommandFactory commandFactory;
-        private StoredProgram storedProgram;
-        private IParser parser;
-		
+        private Bitmap bitmap;
+        private Interpreter interpreter;
+
 		/// <summary>
 		/// Constructor for the main form.
 		/// </summary>
@@ -22,11 +20,10 @@ namespace MainProject
         {
             InitializeComponent();
 
-			canvas = new AppCanvas();
-			bitmap = (Bitmap) canvas.getBitmap();
-			commandFactory = new ExtendedCommandFactory();
-            storedProgram = new UnrestrictedStoredProgram(canvas);
-            parser = new UnrestrictedParser(commandFactory, storedProgram);
+            canvas = new AppCanvas();
+            bitmap = (Bitmap) canvas.getBitmap();
+            interpreter = new Interpreter(canvas, bitmap);
+			
 		}
 
 		/// <summary>
@@ -52,30 +49,19 @@ namespace MainProject
         {
             try
             {
-                ExecuteCommand(txtbox_input.Text);
+                interpreter.ExecuteProgram(txtbox_input.Text);
+				Refresh();
             }
             catch (BOOSEException ex)
             {
                 MessageBox.Show(
-						ex.Message,
-						"Error",
-						MessageBoxButtons.OK,
-						MessageBoxIcon.Error
-						);
+					ex.Message,
+					"Error",
+					MessageBoxButtons.OK,
+					MessageBoxIcon.Error
+				);
             }
         }
 
-		/// <summary>
-		/// Executes the input command to display the output.
-		/// </summary>
-		///
-		/// <param name="input">Input command to execute.</param>
-        public void ExecuteCommand(string input)
-        {
-			storedProgram.ResetProgram();
-            parser.ParseProgram(input);
-            storedProgram.Run();
-            Refresh();
-        }
     }
 }
