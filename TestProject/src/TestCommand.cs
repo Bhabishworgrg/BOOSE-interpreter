@@ -1,4 +1,6 @@
-﻿using MainProject;
+﻿using BOOSE;
+using MainProject;
+using System.Drawing;
 
 namespace TestProject
 {
@@ -39,7 +41,10 @@ namespace TestProject
             try
             {
                 // Act
-                mainForm.ExecuteCommand(multilineCommands);
+                ICanvas canvas = new AppCanvas();
+                Bitmap bitmap = (Bitmap) canvas.getBitmap();
+                Interpreter interpreter = new Interpreter(canvas, bitmap);
+                interpreter.ExecuteProgram(multilineCommands);
             }
             catch (Exception ex)
             {
