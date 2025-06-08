@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
 	/// <summary>
 	/// Main form of the interpreter.

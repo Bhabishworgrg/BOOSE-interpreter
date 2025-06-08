@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents the unrestricted 'poke' command for modifying array elements.

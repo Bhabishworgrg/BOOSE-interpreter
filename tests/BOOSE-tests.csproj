@@ -10,7 +10,7 @@
 	</PropertyGroup>
 
 	<ItemGroup>
-		<ProjectReference Include="..\BOOSE.Interpreter.csproj" />
+		<ProjectReference Include="..\BOOSE-interpreter.csproj" />
 	</ItemGroup>
 
 	<ItemGroup>

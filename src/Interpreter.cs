@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
 	/// <summary>
 	/// Represents the interpreter for the BOOSE language.

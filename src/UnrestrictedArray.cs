@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents an unrestricted array command in BOOSE that allows array manipulation.

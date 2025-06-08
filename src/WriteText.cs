@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Command to write text on the canvas.

@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents the unrestricted 'peek' command for accessing array elements.

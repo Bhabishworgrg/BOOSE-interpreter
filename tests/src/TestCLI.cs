@@ -1,4 +1,4 @@
-﻿using BOOSE.Interpreter;
+﻿using BOOSE.Main;
 
 namespace BOOSE.Tests
 {

@@ -1,4 +1,4 @@
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents the invoker in the command design pattern, responsible for executing a command.

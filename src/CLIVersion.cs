@@ -1,4 +1,4 @@
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents the command to retrieve and display the CLI version.

@@ -1,7 +1,7 @@
 using BOOSE;
 using System.Diagnostics;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents the receiver in the command design pattern, containing the actual logic for CLI operations.

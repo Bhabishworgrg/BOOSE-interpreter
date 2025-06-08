@@ -1,4 +1,4 @@
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents a command in the CLI that can be executed.

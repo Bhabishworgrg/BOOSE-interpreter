@@ -1,4 +1,4 @@
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Represents the CLI command to launch the GUI interface.

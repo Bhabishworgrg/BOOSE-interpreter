@@ -1,6 +1,6 @@
 ﻿using BOOSE;
 
-namespace BOOSE.Interpreter
+namespace BOOSE.Main
 {
     /// <summary>
     /// Class for drawing shapes and text.

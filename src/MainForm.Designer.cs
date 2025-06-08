@@ -1,4 +1,4 @@
-﻿namespace BOOSE.Interpreter
+﻿namespace BOOSE.Main
 {
     partial class MainForm
     {
@@ -74,7 +74,7 @@
             MaximumSize = new Size(1258, 853);
             MinimumSize = new Size(1258, 853);
             Name = "MainForm";
-            Text = "BOOSE Interpreter";
+            Text = "BOOSE.Main";
             ((System.ComponentModel.ISupportInitialize)picbox_output).EndInit();
             ResumeLayout(false);
             PerformLayout();

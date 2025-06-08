@@ -1,5 +1,5 @@
 ﻿using BOOSE;
-using BOOSE.Interpreter;
+using BOOSE.Main;
 using System.Drawing;
 
 namespace BOOSE.Tests
