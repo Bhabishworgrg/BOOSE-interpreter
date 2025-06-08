@@ -1,7 +1,7 @@
 using System.Security.Principal;
 using System.Diagnostics;
 
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// Provides methods for checking administrative rights and restarting the application with administrative privileges.
@@ -73,7 +73,7 @@ namespace MainProject
             {
                 File.WriteAllText(
                     filePath,
-                    $"@echo off\n\"{AppDomain.CurrentDomain.BaseDirectory}MainProject.exe\" %*"
+                    $"@echo off\n\"{AppDomain.CurrentDomain.BaseDirectory}BOOSE.Interpreter.exe\" %*"
                 );
             }
             catch (Exception ex)

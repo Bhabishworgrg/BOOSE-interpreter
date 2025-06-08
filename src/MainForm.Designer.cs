@@ -1,4 +1,4 @@
-﻿namespace MainProject
+﻿namespace BOOSE.Interpreter
 {
     partial class MainForm
     {

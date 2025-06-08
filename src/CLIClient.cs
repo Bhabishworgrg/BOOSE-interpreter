@@ -1,4 +1,4 @@
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// Represents the CLI client responsible for processing and executing CLI commands based on user input.

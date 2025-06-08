@@ -15,12 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\MainProject\MainProject.csproj" />
+    <ProjectReference Include="..\BOOSE.Interpreter\BOOSE.Interpreter.csproj" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="BOOSE">
-      <HintPath>..\MainProject\lib\BOOSE.dll</HintPath>
+      <HintPath>..\BOOSE.Interpreter\lib\BOOSE.dll</HintPath>
     </Reference>
   </ItemGroup>
 

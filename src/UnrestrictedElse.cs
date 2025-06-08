@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// Represents an unrestricted Else command in BOOSE with reduced restrictions.

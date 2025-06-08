@@ -1,8 +1,8 @@
 ﻿using BOOSE;
-using MainProject;
+using BOOSE.Interpreter;
 using System.Drawing;
 
-namespace TestProject
+namespace BOOSE.Tests
 {
 	/// <summary>
 	/// Test class to check execution of user input commands.

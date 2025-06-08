@@ -1,4 +1,4 @@
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// The driver class for the application.

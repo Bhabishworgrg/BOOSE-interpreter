@@ -1,4 +1,4 @@
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// Represents the CLI command to generate output.

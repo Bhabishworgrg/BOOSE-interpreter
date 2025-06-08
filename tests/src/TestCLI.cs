@@ -1,6 +1,6 @@
-﻿using MainProject;
+﻿using BOOSE.Interpreter;
 
-namespace TestProject
+namespace BOOSE.Tests
 {
     /// <summary>
     /// Test class to check execution of CLI BOOSE commands.

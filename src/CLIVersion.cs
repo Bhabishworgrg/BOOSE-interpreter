@@ -1,4 +1,4 @@
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// Represents the command to retrieve and display the CLI version.

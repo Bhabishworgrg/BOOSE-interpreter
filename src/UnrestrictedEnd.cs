@@ -1,6 +1,6 @@
 using BOOSE;
 
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// Represents an unrestricted End command in BOOSE, used to end control structures such as If, While, and For.

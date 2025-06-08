@@ -1,7 +1,7 @@
 using BOOSE;
 using System.Text.RegularExpressions;
 
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// A parser that interprets and parses unrestricted commands in the BOOSE language.

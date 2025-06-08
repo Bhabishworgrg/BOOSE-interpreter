@@ -1,7 +1,7 @@
 using BOOSE;
 using System.Reflection;
 
-namespace MainProject
+namespace BOOSE.Interpreter
 {
     /// <summary>
     /// Represents an unrestricted method command in BOOSE with reduced restrictions.

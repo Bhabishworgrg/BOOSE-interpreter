@@ -1,8 +1,8 @@
-﻿using MainProject;
+﻿using BOOSE.Interpreter;
 using BOOSE;
 using System.Drawing;
 
-namespace TestProject
+namespace BOOSE.Tests
 {
 	/// <summary>
 	/// Test class to check the methods that change the position of the pen.
