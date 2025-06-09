@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>BOOSE Interpreter | Code Documentation</title>
+		<link href="https://fonts.googleapis.com/css2?family=Fira+Code&display=swap" rel="stylesheet">
+		<style>
+		* {
+			box-sizing: border-box;
+		}
+		body {
+			font-family: 'Fira Code', monospace;
+			margin: 0;
+			background: #1e1e2f;
+			color: #e0e0e0;
+		}
+		header {
+			background: #282c34;
+			padding: 1rem 2rem;
+			text-align: center;
+			font-size: 1.8rem;
+			font-weight: bold;
+		}
+		nav {
+			background: #2c2f3f;
+			padding: 1rem;
+			display: flex;
+			justify-content: center;
+			gap: 2rem;
+		}
+		nav a {
+			color: #61dafb;
+			text-decoration: none;
+			font-size: 1.1rem;
+		}
+		nav a:hover {
+			text-decoration: underline;
+		}
+		iframe {
+			width: 100%;
+			height: calc(100vh - 150px);
+			border: none;
+		}
+		</style>
+	</head>
+
+	<body>
+		<header>BOOSE Interpreter - Code Documentation</header>
+		<nav>
+			<a href="doc/index.html" target="docFrame">Interpreter Docs</a>
+			<a href="tests/doc/index.html" target="docFrame">Test Docs</a>
+		</nav>
+		<iframe name="docFrame" src="doc/index.html"></iframe>
+	</body>
+</html>
+
