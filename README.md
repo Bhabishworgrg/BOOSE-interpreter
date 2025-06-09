@@ -55,6 +55,9 @@ for i = 1 to 5
 endfor
 ```
 
+> See more examples [here](examples).
+> See BOOSE's documentation [here](BOOSE.md).
+
 ---
 
 # License
