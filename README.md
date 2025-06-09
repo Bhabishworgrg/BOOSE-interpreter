@@ -56,6 +56,7 @@ endfor
 ```
 
 > See more examples [here](examples).
+>
 > See BOOSE's documentation [here](BOOSE.md).
 
 ---
