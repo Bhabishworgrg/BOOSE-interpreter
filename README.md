@@ -1,102 +1,67 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-22041afd0340ce965d47ae6ef1cefeee28c7c493a6346c4f15d667ab976d596c.svg)](https://classroom.github.com/a/iqf2MWm1)
-# ASE Portfolio
-Fill in the fields below.
+# BOOSE Interpreter
 
-## Your Name Bhabishwor Gurung
-### Your Tutor Resham Pun
+**BOOSE (Basic Object-Oriented Software Engineering)** is a small custom graphical language. This interpreter is an all-in-one solution to write and run BOOSE programs.
 
-Keep your progress up to date below. Put "DONE" after each section, when you have done it.
+---
 
-### Checkpoint
-#### 1 Version Control (1) 5 marks
-	At least two documented commits to provided on GitHub Classroom BEFORE 12pm 7th October.
-	At least 5 documented commits.
-	Readme.md file filled in correctly.
+## Features
 
-DONE
+- **Write BOOSE Programs**  
+  Use the built-in code editor to type or paste BOOSE scripts.
 
-#### 2 Unit Tests for basic drawing commands above (1) 5 marks
-	Unit Test for moveto command (variables storing pen position are correct)
-	Unit Test for drawTo command (variables storing pen position are correct)
-	Unit Test for a multiline program.
+- **Run Code Instantly**  
+  Click **Run** and your code will be interpreted and executed right away.
 
-DONE
+- **Visual Drawing Output**  
+  Drawing commands like `moveto`, `drawto`, `circle`, and `rect` display their result in a visual output window.
 
-#### 3 XML Comments/documentation produced (1) 5 marks*
-	Fully documented with XML comments and Documentation web site produced 
+- **Change Pen Colours**  
+  Use the `pencolour` command to draw in red, green, blue, and more.
 
-DONE
+- **Use Loops and Logic**  
+  Run BOOSE programs that include `for`, `while`, and `if` statements to create dynamic patterns.
 
-#### 4 Exception Handling (1) 5 marks*
+- **Call Methods and Use Variables**  
+  Use reusable code with method definitions and store data using integer, real, and array variables.
 
-DONE
+- **Error Feedback**  
+  Syntax and runtime errors are shown clearly so you know what went wrong in your script.
 
-#### 5 Library (DLL) installed and working with reasonable user interface (2) 10 marks
-	Form interface with program window, output window and run button
-	BOOSE DLL library installed 
-	call about method and display returned information in output/debug window
-	you can use System.Diagnostics to output to the debug window
+## Prerequisites
+- .NET 8.0 SDK
 
-DONE
+## Usage
 
-#### 6 Basic drawing commands of the library are implemented (2) 10 marks
-	Moveto, circle, rect, pencolour, write.
-	Unrestricted drawing programs can be run (1unrestrictedDrawing.boose)
+> BOOSE Interpreter is currently only available for Windows (net8.0-windows).
 
-DONE
+1. Publish the project.
+```bash
+dotnet publish .\BOOSE-interpreter.csproj
+```
+2. Run the interpreter.
+```bash
+.\bin\Release\net8.0-windows\BOOSE-interpreter.exe
+```
 
-### Tutor's Feedback
+## Sample BOOSE Program
 
+```
+moveto 100,100
+pencolour red
+circle 50
 
-### Final Submission
-#### 1 Further Version Control (1) 5 marks
-	You must continue to use VC to a professional standard with frequent and clear commits
-	Your Readme.md must be up to date
+for i = 1 to 5
+    drawto i*10, i*20
+endfor
+```
 
-DONE
+---
 
-#### 2 Use of Interfaces (1) 5 marks 
-	Interfaces to be used for all classes where appropriate
+# License
 
-DONE
+This project is licensed under the GNU v3 License. See [LICENSE](LICENSE) for details.
 
-#### 3 Further Unit Testing (1) 5 marks
-	Tests for full program all of the facilities completed in 5,6 and 7 below
-	It is up to you how design your tests (i.e. one test per facility or one test testing many but they must be clearly documented with XML comments)
+# Get in Touch
 
-DONE
-
-#### 4 Design Patterns (1) 5 marks 
-	Use of factory Design Pattern for command creation
-	Demonstrate the use of another design pattern of your choice
-	(for 5,6 and 7 you can click the links to see the example BOOSE programs that must be run, these are in your Portfolio. You must run the unrestricted programs and replace the image already there with an 	image of your BOOSE Interpreter running the BOOSE programs. You may show further programs in your portfolio.)
-
-DONE
-
-#### 5 Replaced variables (2)
-	Int	4 marks
-	Real	4 marks
-	Array	5 marks
-
-DONE
-
-#### 6 Replaced if, while, for (2)
-	While 	5 marks
-	For	6 marks
-	If else	6 marks
-
-DONE
-
-#### 7 Replaced Methods (2) 5 marks
-DONE
-
-#### 8 Additional (web version, text-based version, extension to BOOSE itself, etc, discuss with your tutor) (2) 10 marks
-DONE
-
-### Tutor's Feedback
-
-
-### note
-Remember that the BOOSE library is a work in progress and is likely to have bug fixes and updates. Check Discord and/or myBeckett to see if updates have been released.
-Report any bugs to @dmullier\
-v1.0
+[<img src="https://img.shields.io/badge/email-white?&style=for-the-badge&logo=gmail" alt="Email"/>](mailto:bhabishworgrg@gmail.com)
+[<img src="https://img.shields.io/badge/linkedin-blue?&style=for-the-badge" alt="LinkedIn"/>](https://www.linkedin.com/in/bhabishwor-gurung/)
